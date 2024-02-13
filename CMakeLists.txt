@@ -12,16 +12,18 @@ endif()
 
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
-find_package(geometry_msgs REQUIRED)
+find_package(action_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
 
 set(ACT_FILES
-	"action/DSPY.action"
+	"action/QA.action"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${ACT_FILES}
   DEPENDENCIES 
-  geometry_msgs
+  action_msgs
+  std_msgs
 )
 
 ament_export_dependencies(rosidl_default_runtime)
